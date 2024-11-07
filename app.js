@@ -11,6 +11,7 @@
  * @Parameters: Array or string
  * @Return: Scrambled Array or string, based on the provided parameter
  */
+
 function shuffle (src) {
   const copy = [...src]
 
@@ -50,10 +51,12 @@ function App() {
   const [gameStatus, setGameStatus] = React.useState(true);
   const [winLose, setWinLose] = React.useState(null); 
   const [userInput, setUserInput] = React.useState('');
+  const [shuffledWord, setShuffledWord] = React.useState(() => shuffle(words[0]));
 
  
   React.useEffect(() => {
     localStorage.setItem('gameInfo', JSON.stringify(gameInfo));
+    setShuffledWord(shuffle(gameInfo.word))
   }, [gameInfo]);
 
   function handleGuess() {
@@ -61,7 +64,6 @@ function App() {
     const inputWord = userInput.toLowerCase();
 
     if (inputWord === currentWord) {
-      if (words[index + 1]) {
           setGameInfo(prev => ({
             ...prev,
             points: prev.points + 1,
@@ -76,16 +78,21 @@ function App() {
             word: words[prev.index + 1] || ''
           }));
         } 
-      } else {
-
-      }
 
     setUserInput(''); 
 
     checkGameStatus();
   }
-
-  function checkGameStatus() {
+function handlePass() {
+  setGameInfo(prev => ({
+    ...prev,
+    passes: prev.passes - 1,
+    index: prev.index + 1,
+    word: words[prev.index + 1] || ''
+  }));
+}
+  
+function checkGameStatus() {
     if (gameInfo.points + 1 === 3) {
       setGameStatus(false);
       setWinLose(true); // Player wins
@@ -111,12 +118,8 @@ function App() {
     setUserInput(e.target.value);
   }
 
-  /* function shuffle(word) {
-    return word.split('').sort(() => Math.random() - 0.5).join('');
-  } */
-
   return (
-    <div>
+    <div className='container'>
       <h1>Welcome to Scramble.</h1>
       <p className={gameStatus ? "d-none" : ""}>{winLose ? "You Win!!" : "You Lose~~"}</p>
       <div>
@@ -129,10 +132,10 @@ function App() {
           <p>STRIKES</p>
         </div>
       </div>
-      <div>{shuffle('')}</div>
+      <div>{shuffledWord}</div>
       <input type="text" value={userInput} onChange={handleInputChange} />
       <button className={gameStatus ? "" : "d-none"} onClick={handleGuess}>Check</button>
-      <button className={gameStatus ? "" : "d-none"}><span>{gameInfo.passes}</span> Passes Remaining</button>
+      <button className={gameStatus ? "" : "d-none"} onClick={handlePass}><span>{gameInfo.passes}</span> Passes Remaining</button>
       <button className={gameStatus ? "d-none" : ""} onClick={restartGame}>Restart</button>
     </div>
   );
