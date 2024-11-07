@@ -1,127 +1,133 @@
 
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    background-color: #f5f5f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  }
-  
-  #root {
-    max-width: 400px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    font-size: 1.2em;
-    color: #666;
-    margin: 5px 0;
-  }
-  
-  .d-none {
-    display: none;
-  }
-  
-  /* Points and strikes styling */
-  div > div {
-    display: flex;
-    justify-content: space-around;
-    margin: 10px 0;
-  }
-  
-  div > div > p {
-    font-size: 1.2em;
-    color: #444;
-  }
-  
-  div > div > p:first-child {
-    font-size: 2em;
-    font-weight: bold;
-    color: #008080;
-  }
-  
-  /* Shuffled word display */
-  div > div:last-of-type {
-    font-size: 1.5em;
-    color: #333;
-    margin: 15px 0;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-  
-  /* Input and buttons styling */
-  input[type="text"] {
-    width: 90%;
-    padding: 10px;
-    font-size: 1em;
-    margin-bottom: 15px;
-    border: 2px solid #008080;
-    border-radius: 4px;
-    outline: none;
-    transition: border-color 0.3s;
-  }
-  
-  input[type="text"]:focus {
-    border-color: #005757;
-  }
-  
-  button {
-    display: inline-block;
-    width: 100%;
-    padding: 10px;
-    font-size: 1em;
-    color: #ffffff;
-    background-color: #008080;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background-color: #005757;
-  }
-  
-  /* Passes button styling */
-  button span {
-    font-weight: bold;
-  }
-  
-  button[disabled] {
-    background-color: #bbb;
-    cursor: not-allowed;
-  }
-  
-  /* Game over message styling */
-  p.win {
-    color: #4CAF50;
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  
-  p.lose {
-    color: #f44336;
-    font-size: 1.5em;
-    font-weight: bold;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 400px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+  color: #666;
+  margin: 5px 0;
+}
+
+.d-none {
+  display: none;
+}
+
+/* Points and strikes styling */
+div > div {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+div > div > p {
+  font-size: 1.2em;
+  color: #444;
+}
+
+div > div > p:first-child {
+  font-size: 2em;
+  font-weight: bold;
+  color: #008080;
+}
+
+/* Shuffled word display */
+div > div:last-of-type {
+  font-size: 1.5em;
+  color: #333;
+  margin: 15px 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+/* Input and buttons styling */
+input {
+  width: 90%;
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 15px;
+  border: 2px solid #008080;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #005757;
+}
+
+button {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  color: #ffffff;
+  background-color: #008080;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #005757;
+}
+
+/* Passes button styling */
+button span {
+  font-weight: bold;
+}
+
+button[disabled] {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+/* Game over message styling */
+p.win {
+  color: #4CAF50;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+p.lose {
+  color: #f44336;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+
+
+
   
